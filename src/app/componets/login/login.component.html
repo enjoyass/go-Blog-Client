@@ -1,0 +1,17 @@
+<h2 class="page-header">Login page</h2>
+<div [ngClass]="messageClass">{{message}}</div>
+<form [formGroup]="form"(ngSubmit)="onLogin()" novalidate>
+  <div class="form-group">
+    <label class="center-block">Email:
+      <div>
+        <input type="text" name="email" class="form-control" formControlName="email" placeholder="email">
+      </div>
+    </label>
+    <label class="center-block">passWord:
+      <div>
+        <input type="password" name="password" class="form-control" formControlName="password" placeholder="password">
+      </div>
+    </label>
+    <button [disabled]="!form.valid||processing" type="submit" class="btn btn-primary">提交</button>
+  </div>
+</form>
